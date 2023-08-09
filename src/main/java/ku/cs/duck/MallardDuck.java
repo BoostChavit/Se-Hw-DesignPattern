@@ -2,6 +2,6 @@ package ku.cs.duck;
 
 public class MallardDuck implements Quackable{
     public void quack(){
-        System.out.println("Kwak");
+        System.out.println("Quack");
     }
 }
