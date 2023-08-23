@@ -20,23 +20,31 @@ public class DuckSimulator {
 //        Pigeon pigeon = new Pigeon();
 
         // QuackEcho
-        Quackable mallardDuck = new QuackEcho(new MallardDuck());
-        Quackable redheadDuck = new QuackEcho(new RedheadDuck());
-        Quackable duckCall = new QuackEcho(new DuckCall());
-        Quackable rubberDuck = new QuackEcho(new RubberDuck());
+//        Quackable mallardDuck = new QuackEcho(new MallardDuck());
+//        Quackable redheadDuck = new QuackEcho(new RedheadDuck());
+//        Quackable duckCall = new QuackEcho(new DuckCall());
+//        Quackable rubberDuck = new QuackEcho(new RubberDuck());
 
+        // QuackCounter and QuackEcho are combined.
+        Quackable mallardDuck = new QuackEcho(new QuackCounter(new MallardDuck()));
+        Quackable mallardDuck2 = new QuackCounter(new QuackEcho(new MallardDuck()));
 
         // System.out.println("Duck Simulator");
         // System.out.println("Duck Simulator: with Decorator");
-        System.out.println("Duck Simulator: with Decorator ( QuackEcho )");
+        System.out.println("Duck Simulator: with Decorator ( QuackEcho and QuackCounter)");
 
         simulate(mallardDuck);
-        simulate(redheadDuck);
-        simulate(duckCall);
-        simulate(rubberDuck);
+        System.out.println("The Mallard Duck quacked " + QuackCounter.getQuacks() + " times.");
+
+        simulate(mallardDuck2);
+        System.out.println("The Mallard Duck 2 quacked " + QuackCounter.getQuacks() + " times.");
+
+//        simulate(redheadDuck);
+//        simulate(duckCall);
+//        simulate(rubberDuck);
 //        simulate(new GooseAdapter(goose));
 //        simulate(new PigeonAdapter(pigeon));
 
-        // System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times.");
+
     }
 }
