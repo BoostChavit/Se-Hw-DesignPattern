@@ -18,7 +18,7 @@ public class DuckFactory extends AbstractDuckFactory{
         return new QuackCounter(duck);
     }
 
-    public Quackable createQuackEchoAndCounter(QuackCounter duck){
-        return new QuackEcho(duck);
+    public Quackable createQuackEchoAndCounter(Quackable duck){
+        return new QuackEcho(new QuackCounter(duck));
     }
 }

@@ -8,5 +8,5 @@ public abstract class AbstractDuckFactory {
 
     public abstract Quackable createQuackCounter( Quackable duck);
 
-    public abstract Quackable createQuackEchoAndCounter( QuackCounter duck);
+    public abstract Quackable createQuackEchoAndCounter( Quackable duck);
 }

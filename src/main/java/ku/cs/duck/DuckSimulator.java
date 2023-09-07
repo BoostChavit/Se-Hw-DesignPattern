@@ -17,11 +17,13 @@ public class DuckSimulator {
         Quackable redheadDuck = duckFactory.createRedheadDuck();
         Quackable rubberDuckCounter = duckFactory.createQuackCounter(rubberDuck);
         Quackable redheadDuckCounter = duckFactory.createQuackCounter(redheadDuck);
+        Quackable rubberDuckCounterAndEcho = duckFactory.createQuackEchoAndCounter(rubberDuckCounter);
 
         simulate(rubberDuck);
         simulate(redheadDuck);
         simulate(rubberDuckCounter);
         simulate(redheadDuckCounter);
+        simulate(rubberDuckCounterAndEcho);
 
         System.out.println("Counter quack : " + QuackCounter.getQuacks());
     }
