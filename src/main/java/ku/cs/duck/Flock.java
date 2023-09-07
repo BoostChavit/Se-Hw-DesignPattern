@@ -11,10 +11,14 @@ public class Flock implements Quackable{
     }
 
     public void quack(){
-        Iterator<Quackable> iterator = quackers.iterator();
-        while (iterator.hasNext()){
-            Quackable quacker = (Quackable) iterator.next();
-            quacker.quack();
+        for(int i=0; i<quackers.size(); i++){
+            if(i==0){
+                quackers.get(i).quack();
+                quackers.get(i).quack();
+                quackers.get(i).quack();
+            }else{
+                quackers.get(i).quack();
+            }
         }
     }
 }
